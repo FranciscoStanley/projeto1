@@ -24,10 +24,18 @@ class ProdutosController extends Controller
 
         //opção 3
 
-        $produto = $request->input('produto');
-        $preco = $request->input('preco');
-        $categoria = $request->input('categoria');
+        //$produto = $request->input('produto');
+        //$preco = $request->input('preco');
+        //$categoria = $request->input('categoria');
 
-        return view('produtos', ['produto'=>$produto, 'preco'=> $preco, 'categoria'=> $categoria]);
+        $dados = [
+            'produto'=>$request->input('produto'),
+            'preco'=> $request->input('preco'),
+            'categoria'=> $request->input('categoria')
+        ];
+
+        return view('produtos', $dados);
+
+        //return view('produtos', ['produto'=>$produto, 'preco'=> $preco, 'categoria'=> $categoria]);
     }
 }
